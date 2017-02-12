@@ -5,6 +5,133 @@ HOST: http://api.factory.zone/v1/
 
 KPI feature enables the organization track employee KPI information in line with Organizational goals with a periodd.
 
+# KPI Category Collection [/kpi-categories]
+
+## List KPI Categories [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "1";
+                "name": "Human Resources";
+                "description": "KPI on employee related activities";
+                "user_id": 1;
+                "org_id":1;
+                "created_at": "2017-02-10 20:40:52";
+                "modified_at": "2017-02-10 20:40:52";
+                
+            }
+            {
+                "id": "2";
+                "name": "Projects";
+                "description": "KPI on employee related activities";
+                "user_id": 1;
+                "org_id":1;
+                 "created_at": "2017-02-10 20:40:52";
+                "modified_at": "2017-02-10 20:40:52";
+                
+            }
+        
+        ]
+
+### Add Category [PUT]
+
++ Request (application/json)
+
+            {
+                "name": "Projects";
+                "description": "KPI on employee related activities";
+                "user_id": 1;
+                "org_id":1;
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /kpi/:id
+
+    + Body
+
+            {
+                "id": "2";
+                "name": "Projects";
+                "description": "KPI on employee related activities";
+                "user_id": 1;
+                "org_id":1;
+                 "created_at": "2017-02-10 20:40:52";
+                "modified_at": "2017-02-10 20:40:52";
+                
+            }
+            
+
+## Manage KPI Category [/kpi-category/{id}]
+
+ + Parameters
+ 
+    + id - KPI Category ID form of an integer
+
+### View Category [GET]
+
++ Response 200 (application/json)
+
+   `
+    + Headers
+        
+            Location: /kpi-category/:id
+
+    + Body
+        
+            {
+                "id": "1";
+                "name": "Human Resources";
+                "description": "KPI on employee related activities";
+                "user_id": 1;
+                "org_id":1;
+                "created_at": "2017-02-10 20:40:52";
+                "modified_at": "2017-02-10 20:40:52";
+            }
+### Edit Category [PUT]
+
++ Request (application/json)
+
+         {
+                "name": "Projects";
+                "description": "KPI on employee related activities";
+                "user_id": 1;
+                "org_id":1;
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /kpi/:id
+
+    + Body
+
+            {
+                "id": "2";
+                "name": "Projects";
+                "description": "KPI on employee related activities";
+                "user_id": 1;
+                "org_id":1;
+                 "created_at": "2017-02-10 20:40:52";
+                "modified_at": "2017-02-10 20:40:52";
+                
+            }
+            
+### Remove Category [DELETE]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "status": "Success";
+                "message": "KPI Category was succesfully deleted";
+            }
+
 # KPI Collection [/kpis]
 
 ### List KPI [GET]
@@ -53,8 +180,6 @@ KPI feature enables the organization track employee KPI information in line with
             }
         ]
 
-
-## New KPI [/kpi]
 
 ### Add KPI [POST]
 
