@@ -13,12 +13,13 @@ KPI feature enables the organization track employee KPI information in line with
         [
             {
                 "id": 1;
-                "name": "Sales";
+                "title": "Sales";
                 "frequency": "Daily";
                 "format": "Number";
                 "target": "30000";
                 "category_id": 1;
-                "createdby_id": 23;
+                "org_id": 1;
+                "user_id": 23;
                 "status": 1;
                 "created_at": "2017-02-11 20:40:52";
                 "modified_at": "2017-02-11 20:40:52";
@@ -26,24 +27,26 @@ KPI feature enables the organization track employee KPI information in line with
             
             {
                 "id": 2;
-                "name": "Total Sales";
+                "title": "Total Sales";
                 "frequency": "Weekly";
                 "format": "Number";
                 "target": "250000";
                 "category_id": 1;
-                "createdby_id": 23;
+                "org_id": 1;
+                "user_id": 23;
                 "status": 0;
                 "created_at": "2017-02-11 20:40:52";
                 "modified_at": "2017-02-11 20:40:52";
             }
             {
                 "id": 3;
-                "name": "Attendance";
+                "title": "Attendance";
                 "frequency": "Monthly";
                 "format": "Number";
                 "target": "24";
                 "category_id": 2;
-                "createdby_id": 23;
+                "org_id": 1;
+                "user_id": 23;
                 "status": 1;
                 "created_at": "2017-02-11 20:40:52";
                 "modified_at": "2017-02-11 20:40:52";
@@ -57,12 +60,13 @@ KPI feature enables the organization track employee KPI information in line with
 
          {
 
-                "name": "Number of Completed Tasks";
+                "title": "Number of Completed Tasks";
                 "frequency": "Weekly";
                 "format": "Number";
                 "target": "3";
                 "category_id": 1;
-                "createdby_id": 23;
+                "org_id": 1;
+                "user_id": 23;
                 "status": 1;
             }
 
@@ -76,12 +80,51 @@ KPI feature enables the organization track employee KPI information in line with
 
             {
                 "id": 2;
-                "name": "Number of Completed Tasks";
+                "title": "Number of Completed Tasks";
                 "frequency": "Weekly";
                 "format": "Number";
                 "target": "3";
                 "category_id": 1;
-                "createdby_id": 23;
+                "org_id": 1;
+                "user_id": 23;
+                "status": 1;
+                "created_at": "2017-02-11 20:40:52";
+                "modified_at": "2017-02-11 20:40:52";
+            }
+
+### Edit KPI [PUT]
+
++ Request (application/json)
+
+         {
+
+                "title": "Number of Completed Tasks";
+                "frequency": "Weekly";
+                "format": "Number";
+                "target": "3";
+                "category_id": 1;
+                "org_id": 1;
+                "user_id": 23;
+                "status": 1;
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /kpi/:id
+
+    + Body
+
+            {
+                "id": 2;
+                "title": "Number of Completed Tasks";
+                "frequency": "Weekly";
+                "format": "Number";
+                "target": "3";
+                "category_id": 1;
+                "org_id": 1;
+                "user_id": 23;
                 "status": 1;
                 "created_at": "2017-02-11 20:40:52";
                 "modified_at": "2017-02-11 20:40:52";
@@ -99,12 +142,13 @@ KPI feature enables the organization track employee KPI information in line with
         
             {
                 "id": 1;
-                "name": "Sales";
+                "title": "Sales";
                 "frequency": "Daily";
                 "format": "Number";
                 "target": "30000";
                 "category_id": 1;
-                "createdby_id": 23;
+                "org_id": 1;
+                "user_id": 23;
                 "status": 1;
                 "created_at": "2017-02-11 20:40:52";
                 "modified_at": "2017-02-11 20:40:52";
