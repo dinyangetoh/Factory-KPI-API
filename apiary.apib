@@ -1,11 +1,11 @@
 FORMAT: 1A
-HOST: http://api.factory.zone/v1/kpi
+HOST: http://api.factory.zone/v1/
 
 # Factory - Feature-KPI
 
 KPI feature enables the organization track employee KPI information in line with Organizational goals with a periodd.
 
-# KPI [/]
+# KPI Collection [/kpis]
 
 ### List KPI [GET]
 + Response 200 (application/json)
@@ -54,6 +54,8 @@ KPI feature enables the organization track employee KPI information in line with
         ]
 
 
+## New KPI [/kpi]
+
 ### Add KPI [POST]
 
 + Request (application/json)
@@ -61,6 +63,7 @@ KPI feature enables the organization track employee KPI information in line with
          {
 
                 "title": "Number of Completed Tasks";
+                "description": "KPI tracking tasks completed by users";
                 "frequency": "Weekly";
                 "format": "Number";
                 "target": "3";
@@ -91,7 +94,37 @@ KPI feature enables the organization track employee KPI information in line with
                 "created_at": "2017-02-11 20:40:52";
                 "modified_at": "2017-02-11 20:40:52";
             }
+            
+## Manage KPI [/kpis/{id}]
 
+ + Parameters
+ 
+    + id - KPI ID form of an integer
+
+### View KPI Details [GET]
+
++ Response 200 (application/json)
+
+   `
+    + Headers
+        
+            Location: /kpi/:id
+
+    + Body
+        
+            {
+                "id": 1;
+                "title": "Sales";
+                "frequency": "Daily";
+                "format": "Number";
+                "target": "30000";
+                "category_id": 1;
+                "org_id": 1;
+                "user_id": 23;
+                "status": 1;
+                "created_at": "2017-02-11 20:40:52";
+                "modified_at": "2017-02-11 20:40:52";
+            }
 ### Edit KPI [PUT]
 
 + Request (application/json)
@@ -129,27 +162,13 @@ KPI feature enables the organization track employee KPI information in line with
                 "created_at": "2017-02-11 20:40:52";
                 "modified_at": "2017-02-11 20:40:52";
             }
-
-### View KPI [GET /:id]
+### Remove KPI [DELETE]
 
 + Response 200 (application/json)
 
-    + Headers
-        
-            Location: /kpi/:id
-
     + Body
-        
+    
             {
-                "id": 1;
-                "title": "Sales";
-                "frequency": "Daily";
-                "format": "Number";
-                "target": "30000";
-                "category_id": 1;
-                "org_id": 1;
-                "user_id": 23;
-                "status": 1;
-                "created_at": "2017-02-11 20:40:52";
-                "modified_at": "2017-02-11 20:40:52";
+                "status": "Success";
+                "message": "KPI was succesfully deleted";
             }
